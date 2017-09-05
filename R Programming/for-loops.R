@@ -8,17 +8,17 @@ for (i in 1:10) {
 #These three loops have the same behaviour.
 x <- c("a","b","c","d")
 
-##Example: for loop 1:
+##Example: for loop 1
 for(i in 1:4) {
         print(x[i])
 }
 
-##Example: for loop 2:
+##Example: for loop 2
 for(i in seq_along(x)) {
         print(x[i])
 }
 
-##Example: for loop 3:
+##Example: for loop 3
 for(letter in x) {
         print(letter)
 }
