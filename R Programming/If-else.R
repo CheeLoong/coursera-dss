@@ -28,3 +28,7 @@ if (x < 0) {
 } else {
         print("Zero")
 }
+
+#Example: ifelse() function
+a <- c(5,7,2,9)
+ifelse(a %% 2 == 0, "even", "odd") #if a is a multiple of 2, print "even" else print "odd"
