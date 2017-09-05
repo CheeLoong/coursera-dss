@@ -1,4 +1,4 @@
-#Control structures: If, If-else, Nested If-else
+#Control structures: if, if..else, nested if..else, ifelse() function
 # Example: if statement
 x <- 5
 if (x > 0){
