@@ -1,4 +1,4 @@
-# R programming Week 2
+# R programming Week 1
 This week is all about getting started with R and learning some of the basic details of the language.
 
 # R-script Information
