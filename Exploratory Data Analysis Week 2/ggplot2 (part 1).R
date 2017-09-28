@@ -22,24 +22,24 @@ qplot(hwy, data = mpg, facets = drv~.,binwidth = 2)
 # Example : MAACS 
 if(!file.exists("./data")){dir.create("./data")}
 load("~/Desktop/coursera-dss/Exploratory Data Analysis Week 2/data/maacs.Rda")
-str(maacs)
+str(maacs) # eno: Exhaled nitric oxide (higher number indicates pulmonary inflammation), pm25: fine particular matter (dust), mopos: sensitized to mouse allergan
 
 # Histogram
-qplot(log(eno), data = maacs) # Histogram
-qplot(log(eno), data = maacs, fill = mopos) # Colour coded Histogram
+qplot(log(eno), data = maacs) # Histogram, looks like there's 3 peaks
+qplot(log(eno), data = maacs, fill = mopos) # Colour coded Histogram, childrens that are mouse positive have slightly higher pulmonary inflammation on average
 
 # Density Smooth
 qplot(log(eno), data = maacs, geom = "density")
-qplot(log(eno), data = maacs, geom = "density", color = mopos)
+qplot(log(eno), data = maacs, geom = "density", color = mopos) 
 
-# Scatterplots: eNO vs. PM2.5
-qplot(log(pm25), log(eno), data = maacs)
-qplot(log(pm25), log(eno), data = maacs, shape = mopos) # separating by shape
+# Scatterplots: eNO vs. PM2.5 (see if they are related)
+qplot(log(pm25), log(eno), data = maacs) # hard to see relationship
+qplot(log(pm25), log(eno), data = maacs, shape = mopos) # separated by shape, hard to see still
 qplot(log(pm25), log(eno), data = maacs, color = mopos) # separating by colour
 
 # Adding a geom
-qplot(log(pm25), log(eno), data = maacs, color = mopos) + geom_smooth(method = "lm")
+qplot(log(pm25), log(eno), data = maacs, color = mopos) + geom_smooth(method = "lm") # look at linear relationship between pm2.5 and ENO for mouse-allergan childrens and non mouse-allergan childrens, for the non-mouse allergan, there's a negative association between dust and pulmonary inflammation, but not particularly a strong relationship due to wide confidence intervals; there appears to be an increasing relationship between dust and pulmonary inflammation.
 
-# Facets
+# Another way to look at the data using facets
 qplot(log(pm25), log(eno), data = maacs, facets = .~mopos) + geom_smooth(method = "lm")
 
