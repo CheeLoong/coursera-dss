@@ -13,12 +13,14 @@ names(kmeansObj)
 kmeansObj$cluster 
 
 # visualise the kmeans()
+oldpar <- par("mar")
 par(mar = rep(0.2, 4))
 plot(x, y, col = kmeansObj$cluster, pch = 19, cex = 2)
 points(kmeansObj$centers, col = 1:3, pch = 3, cex = 3, lwd = 3)
 
-# heatmaps - making heatmap to match data frame
+# heatmaps - making heatmap to match data frame then re-order according to cluster
 set.seed(1234)
+par(mar = oldpar)
 dataMatrix <- as.matrix(dataFrame)[sample(1:12),] 
 dataMatrix
 image(dataMatrix)
