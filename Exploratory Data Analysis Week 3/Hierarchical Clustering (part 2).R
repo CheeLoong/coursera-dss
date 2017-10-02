@@ -21,7 +21,7 @@ text(x + 0.05, y + 0.05, labels = as.character(1:12))
 
 dataFrame <- data.frame(x = x, y = y)
 distxy <- dist(dataFrame)
-hClustering <- hclust(distxy)
+hClustering <- hclust(distxy) # Perform hierarchical clustering
 myplclust(hClustering, lab = rep(1:3, each = 4), lab.col = rep(1:3, each = 4))
 
 # heatmap()
