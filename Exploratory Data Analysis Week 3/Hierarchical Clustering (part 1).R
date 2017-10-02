@@ -1,0 +1,17 @@
+# Hierarchical Clustering (part 1)
+set.seed(1234)
+x <- rnorm(12, mean = rep(1:3, each = 4), sd = 0.2)        
+y <- rnorm(12, mean = rep(c(1, 2, 1), each = 4), sd = 0.2)
+plot(x, y, col = "blue", pch = 19, cex = 2)
+text(x + 0.05, y + 0.05, labels = as.character(1:12))
+
+# Hierarchical clustering - dist()
+dataFrame <- data.frame(x = x, y = y)
+dist(dataFrame)
+
+# Hierarchical clustering - hclust
+dataFrame <- data.frame(x = x, y = y)
+distxy <- dist(dataFrame)
+hClustering <- hclust(distxy) 
+plot(hClustering) # choose level of cluster based on the height of the dendogram
+
