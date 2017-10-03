@@ -20,7 +20,6 @@ points(kmeansObj$centers, col = 1:3, pch = 3, cex = 3, lwd = 3)
 
 # heatmaps - Another way to visualize clustering
 set.seed(1234)
-
 dataMatrix <- as.matrix(dataFrame)[sample(1:12),] 
 dataMatrix
 kmeansObj <- kmeans(dataMatrix, centers = 3)
@@ -35,7 +34,7 @@ title(main = "t(dataMatrix)", font.main = 4) # Transpose
 
 image(t(dataMatrix)[,nrow(dataMatrix):1]) 
 box()
-title(main = "t(datamatrix)[,12:1]", font.main = 4) # Inverse the columns (this heat map is alligned with the dataframe)
+title(main = "t(dataMatrix)[,12:1]", font.main = 4) # Inverse the columns (this heat map is alligned with the dataframe)
 dataMatrix
 
 image(t(dataMatrix)[,order(kmeansObj$cluster)])
