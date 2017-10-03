@@ -27,11 +27,8 @@ myplclust(hClustering, lab = rep(1:3, each = 4), lab.col = rep(1:3, each = 4))
 # heatmap()
 dataFrame <- data.frame(x = x, y = y)
 set.seed(143)
-dataMatrix <- as.matrix(dataFrame)[sample(1:12), ]
+dataMatrix <- as.matrix(dataFrame)[sample(1:12), ] # coerce the dataMatrix into dataFrame and rearrange the rows
 dataFrame
-dataMatrix
+dataMatrix 
 heatmap(dataMatrix) # heatmap runs hierarchical clustering on rows and columns of the table, reorders columns and the rows according to hierarchical clustering algorithm
-library(gplots)
-heatmap.2(dataMatrix)
-heatmap.2(dataMatrix, trace = "none")
-heatmap(dataMatrix)
+
