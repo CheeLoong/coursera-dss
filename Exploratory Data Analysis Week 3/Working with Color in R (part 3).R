@@ -13,3 +13,7 @@ image(volcano, col = pal(20))
 x <- rnorm(10000)
 y <- rnorm(10000)
 smoothScatter(x, y)
+
+# The rgb function (red, green, blue, and transparency)
+plot(x, y, pch = 19)
+plot(x, y, col = rgb(0,0,0,0.2), pch = 19)
