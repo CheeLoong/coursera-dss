@@ -1,3 +1,6 @@
+# Expected Values
+
+## Child height vs Parent height 
 library(UsingR); data(galton); library(ggplot2)
 library(reshape2)
 longGalton <- melt(galton, measure.vars = c("child", "parent"))
@@ -6,7 +9,6 @@ g <- g + facet_grid(. ~ variable)
 g
 
 ## Using manipulate
-        ```
 library(manipulate)
 myHist <- function(mu){
         g <- ggplot(galton, aes(x = child))
@@ -19,4 +21,3 @@ myHist <- function(mu){
         g
 }
 manipulate(myHist(mu), mu = slider(62, 74, step = 0.5))
-```
